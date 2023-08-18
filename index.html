@@ -5,36 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #343a40;
             color: #ffffff;
-        }
-        .navbar-brand-logo {
-            font-family: 'Arial', sans-serif;
-            font-weight: bold;
-            font-size: 24px;
-        }
-        .jumbotron {
-            background-image: url('https://via.placeholder.com/1600x600');
-            background-size: cover;
+            font-family: 'Montserrat', sans-serif;
         }
         .card {
-            background-color: #212529;
+            background-color: #343a40;
             border: none;
             color: #ffffff;
         }
         .bg-light {
-            background-color: #212529;
+            background-color: #343a40;
             color: #ffffff;
         }
+           /* Change the font of the navbar-brand-logo class */
+        .navbar-brand-logo {
+            font-family: 'Montserrat', sans-serif; /* Change to your preferred font */
+            font-size: 30px; /* Adjust the font size as needed */
+            font-weight: 400;
+        }
+
+        .big-text-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 400px; /* Adjust the height as needed */
+            font-size: 4rem;
+            font-family: 'Kanit', sans-serif;
+        }
+        .message {
+            display: inline-block;
+            position: relative;
+            background-color: white;
+            color: #333;
+            vertical-align: middle;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: 900;
+            padding-left: 0.5rem;
+            top: 0.2rem;
+        }
+        .portfolio-item {
+            background-color: #212529;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .portfolio-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .portfolio-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .portfolio-description {
+            font-size: 16px;
+        }
+       @media (max-width: 768px) {
+        /* Adjust font size for smaller screens */
+        .col-md-12 .big-text-container {
+            font-size: 2rem; /* Adjust the value as needed */
+        }
+        .message{
+            font-size: 2rem;
+        }
+    }
+    .portfolio-image {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
     </style>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand navbar-brand-logo" href="#">YINGHUI CHEN</a>
+        <a class="navbar-brand navbar-brand-logo" href="#">Y.CHEN</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -55,20 +112,61 @@
     </div>
 </nav>
 
-<div class="jumbotron jumbotron-fluid text-center">
-    <div class="container">
-        <h1 class="display-4">Landscape Architect | Data Analyst | UX Designer</h1>
-        <p class="lead">Crafting Inspiring Spaces, Informed Insights, and Seamless Experiences</p>
-    </div>
-</div>
-
 <section class="container" id="about">
-    <!-- About Me section content -->
+    <div class="row">
+        <div class="big-text-container">
+            <div class="col-md-6">
+                <span>I am bridging the landscapes of</span>
+            </div>
+            <div class="col-md-6">
+                <div class="message">
+                  <div class="word"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section class="bg-light py-5" id="portfolio">
-    <!-- Portfolio section content -->
+<section class="container" id="portfolio">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="portfolio-item">
+                <h3 class="portfolio-title">Cart Abondonment Analysis</h3>
+                <p class="portfolio-description">Data analysis project</p>
+                <img class="portfolio-image" src="image/Cart Abandonment Overview.png" alt="Project 1">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="portfolio-item">
+                <h3 class="portfolio-title">Predicting Property Damage Costs</h3>
+                <p class="portfolio-description">Data scientist project</p>
+                <img class="portfolio-image" src="image/data scientist project.png" alt="Project 2">
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="portfolio-item">
+                <h3 class="portfolio-title">Sustainable Health Food App</h3>
+                <p class="portfolio-description">Landscape & user experience design</p>
+                <img class="portfolio-image" src="image/health food app.jpg" alt="Project 3">
+            </div>
+        </div>
+    </div>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const words = ["Design", "Data Analysis", "Product Management"];
+    let currentIndex = 0;
+    const wordElement = document.querySelector('.word');
+
+    function changeWord() {
+        wordElement.textContent = words[currentIndex];
+        currentIndex = (currentIndex + 1) % words.length;
+    }
+
+    setInterval(changeWord, 2000); // Change word every 2 seconds
+</script>
 
 <footer class="text-center py-4" id="contact">
     <p>&copy; 2023 Yinghui Chen. All rights reserved.</p>
