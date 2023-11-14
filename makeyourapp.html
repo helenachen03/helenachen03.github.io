@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .bg-light {
+            background-color:white;
+            color: black;
+        }
+        .row h2 {
+            margin:1em 0 1em 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .btn-outline-info {
+            border-color:#36464a;
+            color:#36464a;
+        }
+        .btn-outline-info:hover {
+            background-color:#36464a;
+            color:white;
+            border-color:#36464a;
+        }
+           /* Change the font of the navbar-brand-logo class */
+        .navbar-brand-logo {
+            font-family: 'DM Sans', sans-serif; /* Change to your preferred font */
+            font-size: 30px; /* Adjust the font size as needed */
+            font-weight: 400;
+        }
+       .navbar-nav {
+            margin-left: auto;
+            padding: 1.5rem;
+        }
+        .timeline-list {
+            padding-bottom: 1em;
+            position: relative;
+            max-width:700px;
+            margin:0 auto;
+
+            &:before {
+                content: "";
+                border-left: 3px solid #CCC;
+                left: 0.1em;
+                top: 2em;
+                height: 100%;
+                position: absolute;
+                bottom: 0;
+                top: 0;
+                transform-origin:0 0;
+                animation:scaleVertical 3s 1s ease both 1;
+            }
+
+            &:after {
+                content: "";
+                clear:both;
+                position: absolute;
+                bottom: 0px;
+                left: -0.5em;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: none repeat scroll 0% 0% #DDD;
+                border: 3px solid #DDD;
+                box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+                animation:revealScaleUp 0.75s 2.82s ease both 1;
+            }
+        }
+
+        .t-block-teal {
+            background:#36464a;
+        }
+        .t-block-teal h2 {
+            color:#fff;
+        }
+        .t-block-teal h3 {
+            color:#034944;
+        }
+        .t-block-teal p {
+            color:#034944;
+        }
+
+        .timeline-list li {
+            margin:0 0 3em 0;
+            padding:0 2em 0em 2em;
+            position: relative;
+        }
+        .timeline-list li:before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: -1.45em;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: none repeat scroll 0% 0% #36464a;
+            border: 3px solid #fff;
+            animation:revealScaleUp 0.75s 0s ease both 1;
+        }
+.timeline-list {
+
+animation:reveal 2s 0 ease both 1;
+}
+.timeline-list li .content {
+animation:revealFromLeft 0.5s 0s ease both 1;
+}
+
+
+
+
+.timeline-list li:nth-child(1):before {
+animation-delay:0.85s;
+}
+.timeline-list li:nth-child(1) .content {
+animation-delay:1.05s;
+}
+.timeline-list li:nth-child(2):before {
+animation-delay:1.2s;
+}
+.timeline-list li:nth-child(2) .content {
+animation-delay:1.5s;
+}
+.timeline-list li:nth-child(3):before {
+animation-delay:1.8s;
+}
+.timeline-list li:nth-child(3) .content {
+animation-delay:2.1s;
+}
+.timeline-list li:nth-child(4):before {
+animation-delay:2s;
+}
+.timeline-list li:nth-child(4) .content {
+animation-delay:2.3s;
+}
+@keyframes revealFromLeft {
+0% {
+transform:translateX(-1em);
+opacity:0;
+}
+100% {
+opacity:1;
+transform:translateX(0);
+}
+}
+@keyframes reveal {
+0% {
+opacity:0;
+}
+100% {
+opacity:1;
+}
+}
+@keyframes scaleVertical {
+0% {
+transform:scaleY(0);
+
+}
+100% {
+transform:scaleY(1);
+}
+}
+@keyframes revealScaleUp {
+0% {
+opacity:0;
+transform:scale(0.5);
+}
+
+
+
+50% {
+ opacity:1;
+ transform:scale(1.3);
+
+}
+100% {
+opacity:1;
+transform:scale(1);
+
+}
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-logo" href="#">Y.CHEN</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#works">Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resume">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+<section class="container" id="about">
+    <div class="row">
+        <img src="image/Hero Image01.svg" alt="Hero Image">
+    </div>
+</section>
+
+<section class="container" id="beginning">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Purpose and Context</h2>
+            <p>This project is a fundamental component of my Product Management Bootcamp at CareerFoundry. </p>
+            <p>It centers around the concept of "MakeYourMap," a fictional company catering to both B2B and B2C markets, akin to the popular Google Maps platform. The project provides a comprehensive and hands-on learning experience for me to hone product management skills by working on real-world scenarios and challenges.</p>
+        </div>        
+        <div class="col-md-4">
+            <h2>Objective</h2>
+            <p>To research, design, and build product improvement to create user-generated content in a mapping app named MakeYourMap as the new product manager who just joined the team a week ago. </p>        
+        </div>
+        <div class="col-md-4">
+            <h2>Duration</h2>
+            <p>3 weeks project for Introduction to Product Management Course</p>
+            <h2>Tools/Skills/Methodologies</h2>
+            <li>Prioritization Methods - Google Sheets</li>
+            <li>Survey and User Research - SurveyMonkey, Zoom/Google Meet</li>  
+            <li>Wireframes -  Figma</li> 
+            <li>Presentation - Google Slides</li>       
+        </div>
+    </div>
+    <div class="row">
+        <h2>Steps</h2>
+        <ul class="timeline-list">
+            <li>
+                <div class="content">
+                    <h3>Ideation</h3>
+                     <p>We researched to gather insights from potential contributors to enhance the contributor features. We interviewed 6 participants who regularly use or express interest in local guide apps.
+                        Here are the findings and insights of the research:</p>
+                     <img src="image/myp research insight.png" alt="Research Insight">
+                     <p>Based on the insights, we suggested some features and prioritized two features by the Action Priority Matrix.
+                     </p> 
+                     <img src="image/Action_Priority_Matrix.png" alt="Action Priority Matrix">                      
+                </div>
+            <li>
+                <div class="content">
+                    <h3>Define the Feature</h3>
+                     <p>After defining the two features, we are breaking down the features into epics and user stories by Agile Methodology.</p>
+                     <img src="image/Epics_User_Stories.png" alt="Epics User Stories">
+                    </div>
+            </li>
+            <li>
+                 <div class="content">
+                     <h3>User Stories Validation and Prioritization</h3>
+                    <p>After defining the user stories, we conducted a survey and user interviews to validate them. 
+                        Here are the findings and insights of the research:
+                        <dl> - A positive level of interest is shown in the two proposed features.</dl>
+                        <dl> - Most user stories have been validated through the user interview but some needs change.</dl></p>
+                    <p>Therefore, we have decided to pause on user story#3 because it is not validated. We also noticed that many users were having trouble with the wrong direction, so we added a new story to fix that issue.
+                    </p><p>Then we prioritized the user stories in the Must Have and Should Have categories using the MoSCoW approach.</p> 
+                    <img src="image/MoScoW.png" alt="MoScoW approach">                       
+                </div>
+            </li>
+            <li>
+                <div class="content">
+                    <h3>Visualize Product Improvement Ideas</h3>
+                     <p>After prioritizing the user stories, we visualized the ideas by creating low-fi wireframes.</p>
+                     <img src="image/myp_ptype1.png" alt="Prototype for User Stories">
+                     <img src="image/myp_ptype2.png" alt="Prototype for User Stories">
+                     <img src="image/myp_ptype3.png" alt="Prototype for User Stories"> 
+                </div>
+            </li>
+            <li>
+                <div class="content">
+                    <h3>Get buy-in</h3>
+                     <p>Present our product improvement ideas about the Crowdsourced Updates feature no longer than 10 minutes to the CPO as part of an executive-level product review.</p>
+                </div>
+            </li> 
+        </ul>    
+    </div>
+    <div class="row">
+        <h2>Final Deliverables</h2>
+        <div class="content">
+        <div class="card-body">
+            <a href="https://drive.google.com/file/d/174soMgJQdig-tjzl3xEOh5voFqsLVZsY/view?usp=sharing" class="btn btn-outline-info waves-effect">Final Presentation</a>
+            <a href="https://drive.google.com/file/d/1Fp8yyPlX8pxKyPDuhKKhvuYq-KIcBz6j/view?usp=sharing" class="btn btn-outline-info waves-effect">Product Requirement Document</a>
+        </div></div>
+        <h2>Project Takeaways</h2>
+        <div class="col-md-4">
+        <h4>Desigining Effective Research Questions</h4>
+        <p>The foundation for validating ideas lies in crafting well-designed research questions. These questions serve as the bedrock for gathering insights, shaping our understanding, and ultimately validating the feasibility and relevance of our concepts.</p>
+        </div>
+        <div class="col-md-4">
+        <h4>Tailoring Prioritization Methods</h4>
+        <p>The choice of prioritization methods relies heavily on their inherent characteristics and the audience involved. Selecting the right approach ensures a more effective and targeted alignment of priorities, optimizing our focus on what matters most for our project's success.</p>
+        </div>
+        <div class="col-md-4">
+            <h4>Leveraging Personas for Impactful Storytelling</h4>
+            <p>Personas are versatile tools, not confined to a single purpose. They serve as powerful storytelling elements, enabling us to weave narratives that resonate with various contexts and needs. Their adaptability makes them valuable assets that can be utilized across diverse scenarios as needed, fostering a deeper understanding of our users' behaviors and motivations.</p>
+        </div>
+    </div>  
+  
+</section>
+
+<footer class="text-center py-4" id="contact">
+    <p>&copy; 2023 Yinghui Chen. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
