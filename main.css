@@ -320,6 +320,9 @@ h4{
 /*project container*/
 
 /*contact page*/
+.img-fluid{
+    max-width: 70%;
+}
 
 a {
     -webkit-transition: .3s all ease;
@@ -343,7 +346,7 @@ a {
   }
 
   .forms{
-    padding:0 5rem;
+    padding:3rem 0 0 10rem;
   }
   
   .form-control {
@@ -527,5 +530,8 @@ textarea.form-control{
     .top-border {
     border-top: 0px;
  }
+ .forms{
+    padding:1rem;
+  }
 }
 
