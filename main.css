@@ -321,7 +321,7 @@ h4{
 
 /*contact page*/
 .img-fluid{
-    max-width: 70%;
+    max-width: 70% !important;
 }
 
 a {
