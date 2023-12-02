@@ -533,5 +533,8 @@ textarea.form-control{
  .forms{
     padding:1rem;
   }
+  button.btn.dropdown-toggle{
+    padding-left:0;
+  }
 }
 
