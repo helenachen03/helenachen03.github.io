@@ -70,7 +70,7 @@
       </div>
       <div class="col-md-6 forms">
         
-        <form class="mb-5" method="post" id="contactForm" name="contactForm">
+        <form class="mb-5" action="https://formspree.io/f/xdoqnova" method="POST" id="contactForm" name="contactForm">
           <div class="row">
             <div class="col-md-12 form-group">
               <input type="text" class="form-control" name="name" id="name" placeholder="Your name">
@@ -78,7 +78,7 @@
           </div>
           <div class="row">
             <div class="col-md-12 form-group">
-              <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Email">
             </div>
           </div>
           <div class="row">
@@ -93,8 +93,7 @@
           </div>  
           <div class="row">
             <div class="col-12">
-              <input type="submit" value="Send Message" class="btn message-button btn-primary rounded-0 py-2 px-4">
-            <span class="submitting"></span>
+              <button type="submit" class="btn message-button btn-primary rounded-0 py-2 px-4">Send Message</button>
             </div>
           </div>
         </form>
@@ -114,7 +113,6 @@
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.validate.min.js"></script>
-  <script src="js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 </html>

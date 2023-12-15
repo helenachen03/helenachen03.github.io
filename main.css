@@ -373,12 +373,15 @@ a {
   
   .message-button {
     border-radius: 4px !important; }
+
     .message-button.btn-primary {
       background: #000;
       color: #fff;
       padding: 15px 20px; }
+
     .message-button:hover {
-      color: #fff; }
+      background: #013BB1; }
+
     .message-button:active, .message-button:focus {
       outline: none;
       -webkit-box-shadow: none;
