@@ -1,8 +1,19 @@
+:root{
+--ink: #12111C;
+--muted: #5f5d6b;
+--line: #D0D6EC;
+--blue: #013BB1;
+--orange: #E65B0D;
+--orange-dark: #C24A07;
+--yellow: #F3D253;
+--surface: #F6F7FB;
+}
 body{
 background-color: white;
-color: #12111C;
+color: var(--ink);
 font-family: 'DM Sans', sans-serif;
-
+line-height: 1.6;
+overflow-x: clip; /* the rotating hero words are absolutely positioned and can overflow on phones */
 }
 .card {
 background-color: white;
@@ -26,8 +37,23 @@ margin-left: auto;
 padding: 1.5rem;
 }
 
+/* sticky, frosted nav */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    background-color: rgba(255, 255, 255, 0.85);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(208, 214, 236, 0.6);
+}
+
+/* underline drawn with an inset shadow so hovering doesn't shift the layout */
+.nav-item {
+    transition: box-shadow 0.2s ease;
+}
 .nav-item:hover {
-    border-bottom: 0.2rem solid #F3D253;
+    box-shadow: inset 0 -0.2rem 0 var(--yellow);
   }
 
   .dropdown-menu {
@@ -60,25 +86,29 @@ padding: 1.5rem;
 /*navigation customized*/
 .intro {
 display:block;
-color:#4f4f4f;
-padding-top:10rem;
+color:var(--muted);
+padding-top:6rem;
 }
 
 .big-text-container {
 display: block;
 align-items: center;
 justify-content: bottom;
-height: 30rem; 
+height: 24rem;
 font-family: 'DM Sans', sans-serif;
 }
 h1 {
-font-size: 80px;
+font-size: clamp(2.2rem, 6vw, 80px);
 font-weight: 500;
-line-height: 1.4;
+line-height: 1.3;
+letter-spacing: -0.02em;
 }
 .top {
 display:block;
-color:dimgrey;
+color:var(--muted);
+}
+.bottom {
+color: var(--blue);
 }
 .bottom {
 position: relative;
@@ -148,8 +178,14 @@ margin-top: 10px; /* Adjust the top margin as needed */
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    text-align: justify;
+    line-height: 1.75;
     height:100%;
+}
+.story li {
+    margin-bottom: 0.25rem;
+}
+.image-container img {
+    border-radius: 16px;
 }
 
 .story-right {
@@ -262,16 +298,34 @@ h4{
 
 /*home page button customized*/
 .work{
-    background-color:#E65B0D;
+    background-color:var(--orange);
     color:#FDFCFE;
-    border-color:#E65B0D;
-    border-radius:0;  
+    border-color:var(--orange);
+    border-radius:0;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.work:hover, .work:focus-visible{
+    background-color:var(--orange-dark);
+    border-color:var(--orange-dark);
+    color:#FDFCFE;
+    transform: translateY(-2px);
 }
 /*home page button customized*/
 
 /*project container*/
 .portfolio-image {
     max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(18, 17, 28, 0.06), 0 8px 24px rgba(18, 17, 28, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+.project-border:hover .portfolio-image {
+    transform: translateY(-4px);
+    box-shadow: 0 2px 4px rgba(18, 17, 28, 0.06), 0 16px 40px rgba(18, 17, 28, 0.1);
     }
     
 .bottom-border {
@@ -290,17 +344,26 @@ h4{
     
     }
 .project-border {
-        border-top: 1px solid #D0D6EC; /* Adjust the color and width as needed */
+        border-top: 1px solid var(--line);
+        padding: 3rem 0;
     }
 .project-border h1{
     font-family:'Source Serif 4', serif;
     font-size:4rem;
-    color:#013BB1;
+    color:var(--blue);
+}
+.project-border h4{
+    line-height: 1.35;
 }
 
+/* hashtag line under each project title */
 .project-border p{
-    font-weight: 100;
-    margin-bottom:3rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: var(--blue);
+    opacity: 0.75;
+    margin-bottom:2rem;
 }
 
 .date{
@@ -428,33 +491,34 @@ textarea.form-control{
 }
 /**contact page**/  
 
+footer {
+    margin-top: 2rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
 /*responsive*/
 @media (max-width: 1230px) {
-.project-border p{
-    font-size:14px;
-}
 .project-border h1{
     font-size:2.5rem;
 }
 .project-border h4{
-    font-size:1rem;
+    font-size:1.1rem;
 }
 .project-border p{
-    font-size:0.5rem;
+    font-size:0.8rem;
 }
 .project-border button{
-    font-size:0.5rem;
+    font-size:0.8rem;
 }
-} 
+}
 
 @media (max-width: 1035px) {
     /* Adjust font size for smaller screens */
     .big-text-container {
         height: 20rem; 
         }
-    .big-text-container h1{
-    font-size: 3rem !important; /* Adjust the value as needed */
-    }
     .contact-social-icons a {
         font-size: 18px;
     }
@@ -465,19 +529,16 @@ textarea.form-control{
         margin:0.5rem 0;
     }
     .project-border h4{
-        font-size:0.8rem;
+        font-size:1rem;
         }
     .project-border h1{
             font-size:2rem;
-        }
-    .project-border button{
-            font-size:0.3rem;
         }
 }
 
 @media (max-width: 767px) {
     .big-text-container {
-        height: 15rem; 
+        height: 12rem;
         }
     .social{
         justify-content: flex-start !important;
@@ -502,17 +563,27 @@ textarea.form-control{
     .project-border h1{
         margin-bottom:0;
     }
+    .intro {
+        padding-top:3rem;
+    }
+    .project-border {
+        padding: 2rem 0;
+    }
     .project-border p{
-        font-size:0.7rem;
+        font-size:0.8rem;
+        margin-bottom:1rem;
     }
     .project-border h4{
         padding-top:0.3rem;
-        font-size:1.5rem;
+        font-size:1.25rem;
         }
     .project-border button{
-            font-size:0.3rem;
+            font-size:0.8rem;
             margin-bottom:0.5rem;
         }
+    .portfolio-image {
+        margin: 1rem 0;
+    }
     .story { 
         padding:1.5rem;
     }
@@ -541,3 +612,19 @@ textarea.form-control{
   }
 }
 
+
+/* square/tall figures (e.g. charts) shouldn't fill the full column height */
+.portfolio-image-contain {
+    display: block;
+    width: 100%;
+    max-height: 440px;
+    object-fit: contain;
+    padding: 1.5rem;
+    background: #fff;
+    border: 1px solid var(--line);
+}
+
+/* breathing room between the sticky nav and the first section on every page */
+nav.navbar + section {
+    padding-top: 2rem;
+}
